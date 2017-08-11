@@ -1,16 +1,17 @@
-var MatrizDatos = null;
+window.leirbag = {};
+window.leirbag.matrizDatos =
 //ejemplo config { size: 12 }
-
-MatrizDatos = (function (config) {
+function (config) {
     var mod = {};
     var config = {};
     config.size = config.size || 12;
 
     mod.matriz = [];
+
     inicializar();
 
     return mod;
-    
+
     function inicializar() {
         for (var i = 0; i < config.size; i++) {
             var newCell = [];
@@ -20,4 +21,4 @@ MatrizDatos = (function (config) {
             mod.matriz.push(newCell);
         }
     }
-})(confObj);
+}
