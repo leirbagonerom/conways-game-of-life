@@ -4,7 +4,7 @@ window.leirbag.matrizDatos =
 function (config) {
     var mod = {};
     var config = {};
-    config.size = config.size || 12;
+    config.size = config.size || 48;
 
     mod.matriz = [];
 

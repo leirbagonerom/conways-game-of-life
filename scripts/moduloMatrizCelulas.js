@@ -9,7 +9,7 @@ window.leirbag.matrizCelulas =
         mod.asignarCelula = fnAsignarCelula;
         mod.consultarBloque = fnConsultarBloque;
         mod.tamanio_matriz = matrizDatos.length;
-
+        mod.matrix = matrizDatos;
         return mod;
 
         function poblarMatriz() {
@@ -43,8 +43,8 @@ window.leirbag.matrizCelulas =
 
         function fnConsultarBloque(i1, i2) {
             var r = [];
-            for (var i = 0; i < i1; i++) {
-                for (var j = 0; j < i2; i++) {
+            for (var i = i1 - 1; i <= i1 + 1; i++) {
+                for (var j = i2 - 1 ; j <= i2 + 1; j++) {
                     var cel = fnObtenerCelula(i, j);
                     if (cel != null)
                         r.push(cel);

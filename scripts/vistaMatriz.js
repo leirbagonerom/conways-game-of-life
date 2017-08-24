@@ -6,8 +6,8 @@ window.leirbag.vistaMatriz =
         var _logic = logic;
         var ctx = document.getElementById("canvas").getContext("2d");
         var matrix_size = logic.tamanio_matriz;
-        var w = 500;
-        var h = 500;
+        var w = 600;
+        var h = 600;
         var x = 50;
         var y = 50;
 
@@ -20,9 +20,9 @@ window.leirbag.vistaMatriz =
             ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
             ctx.canvas.addEventListener('click', null);
             ctx.canvas.addEventListener('click', function (mouseClik) {
-
-                var click_x = parseInt(mouseClik.clientX);
-                var click_y = parseInt(mouseClik.clientY);
+                var div_size = (w / matrix_size);
+                var click_x = parseInt(mouseClik.clientX) - (div_size / 2);
+                var click_y = parseInt(mouseClik.clientY) - (div_size / 2);
 
                 var cell = getGridCell(click_x, click_y)
                 if (cell != null) {
@@ -147,14 +147,14 @@ window.leirbag.vistaMatriz =
                 var div_size = (w / matrix_size);
                 for (var i = 0; i < matrix_size; i++) {
                     var curr_x = (i * div_size);
-                    if (i == o.idx[0])
+                    if (i == o.i1)
                         res_x = curr_x + (div_size / 4);
 
-                    if (i == o.idx[1])
+                    if (i == o.i2)
                         res_y = curr_x + (div_size / 4);
                 }
 
-                drawGridCell(res_x, res_y);
+                drawGridCell(res_x - (div_size / 4), res_y - (div_size / 4));
             })
 
         }
